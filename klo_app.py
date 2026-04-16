@@ -66,14 +66,14 @@ st.write("Scanne den QR‑Code, trag dich ein und werde Teil der **Toiletten‑C
 # -----------------------------
 # QR-Code anzeigen
 # -----------------------------
-st.subheader("📱 QR‑Code für das Klo")
+# st.subheader("📱 QR‑Code für das Klo")
 
-url = "https://klotagebuch-partyset.streamlit.app"  # <- hier deine URL eintragen
+# url = "https://klotagebuch-partyset.streamlit.app"  # <- hier deine URL eintragen
 
-qr = qrcode.make(url)
-buf = BytesIO()
-qr.save(buf, format="PNG")
-st.image(buf.getvalue(), caption="Scanne mich, du edler Porzellanthron-Besucher")
+# qr = qrcode.make(url)
+# buf = BytesIO()
+# qr.save(buf, format="PNG")
+# st.image(buf.getvalue(), caption="Scanne mich, du edler Porzellanthron-Besucher")
 
 # -----------------------------
 # Formular für Eintrag
@@ -88,11 +88,15 @@ with st.form("eintrag_form"):
         "Wie würdest du dein Werk bewerten?",
         [
             "💨 Nur ein Lüftchen",
+            "Nur eine kleine Bach",
             "💩 Solide Nummer 2",
             "🚀 Start einer Rakete",
             "🌋 Vulkanische Aktivität",
             "🧻 Ich brauche Unterstützung",
-            "🤫 Geheimmission – Details klassifiziert"
+            "🤫 Geheimmission – Details klassifiziert",
+            "👑 Ein königliches Meisterwerk",
+            "🧙‍♂️ Magische Überraschung",
+            "7 Kringel & eine Spitze – das volle Programm"
         ]
     )
     kommentar = st.text_area("Letzte Worte zu deinem Werk (optional)")
