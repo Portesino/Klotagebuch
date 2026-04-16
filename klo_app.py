@@ -58,10 +58,12 @@ df = load_data()
 st.title("🚽 Klo‑Tagebuch Deluxe")
 
 st.caption("Willkommen auf dem stillen Örtchen. Bitte hinterlassen Sie nur Erinnerungen, keine Spuren.")
+
+st.write("Trag dich ein und werde Teil der **Toiletten‑Chroniken**.")
+st.image("https://www.mein-haustier.de/wp-content/uploads/2021/07/shutterstock_15626023151.jpg")
 st.info(random.choice(klo_weisheiten))
 
 
-st.write("Scanne den QR‑Code, trag dich ein und werde Teil der **Toiletten‑Chroniken**.")
 
 # -----------------------------
 # QR-Code anzeigen
@@ -88,7 +90,7 @@ with st.form("eintrag_form"):
         "Wie würdest du dein Werk bewerten?",
         [
             "💨 Nur ein Lüftchen",
-            "Nur eine kleine Bach",
+            "💧 Nur eine kleine Bach",
             "💩 Solide Nummer 2",
             "🚀 Start einer Rakete",
             "🌋 Vulkanische Aktivität",
@@ -96,7 +98,7 @@ with st.form("eintrag_form"):
             "🤫 Geheimmission – Details klassifiziert",
             "👑 Ein königliches Meisterwerk",
             "🧙‍♂️ Magische Überraschung",
-            "7 Kringel & eine Spitze – das volle Programm"
+            "💩 7 Kringel & eine Spitze – das volle Programm"
         ]
     )
     kommentar = st.text_area("Letzte Worte zu deinem Werk (optional)")
