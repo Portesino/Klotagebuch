@@ -68,7 +68,7 @@ st.write("Scanne den QR‑Code, trag dich ein und werde Teil der **Toiletten‑C
 # -----------------------------
 st.subheader("📱 QR‑Code für das Klo")
 
-url = "https://DEINE-STREAMLIT-URL.streamlit.app"  # <- hier deine URL eintragen
+url = "https://klotagebuch-partyset.streamlit.app"  # <- hier deine URL eintragen
 
 qr = qrcode.make(url)
 buf = BytesIO()
