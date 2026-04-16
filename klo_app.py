@@ -100,13 +100,14 @@ with st.form("eintrag_form"):
             "👑 Ein königliches Meisterwerk",
             "🧙‍♂️ Magische Überraschung",
             "💩 7 Kringel & eine Spitze – das volle Programm",
-            "1️⃣ Großartig – ein Lesmeister Special",
-            "2️⃣ Weber am Werk – ein Meisterwerk der Porzellankunst",
-            "3️⃣ Ein Hecktor, ein Kunsterwerk das die Welt erschüttert – oder zumindest das Badezimmer"
+            "1️⃣ Lesmeister Special",
+            "2️⃣ Ein Weberli",
+            "3️⃣ Hecktor, ein Strolle aus dem Bilderbuch!"
         ]
     )
     kommentar = st.text_area("Letzte Worte zu deinem Werk (optional)")
     submitted = st.form_submit_button("Eintragen und Spülen")
+
 
 if submitted:
     if name.strip() == "":
