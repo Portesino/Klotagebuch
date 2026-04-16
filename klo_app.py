@@ -91,14 +91,18 @@ with st.form("eintrag_form"):
         [
             "💨 Nur ein Lüftchen",
             "💧 Nur eine kleine Bach",
-            "💩 Solide Nummer 2",
+            "💩 Solide Nummer",
             "🚀 Start einer Rakete",
             "🌋 Vulkanische Aktivität",
+            "🥚 Glücks-Ei", 
             "🧻 Ich brauche Unterstützung",
-            "🤫 Geheimmission – Details klassifiziert",
+            "🤫 Geheimmission – der Geniesser!",
             "👑 Ein königliches Meisterwerk",
             "🧙‍♂️ Magische Überraschung",
-            "💩 7 Kringel & eine Spitze – das volle Programm"
+            "💩 7 Kringel & eine Spitze – das volle Programm",
+            "1️⃣ Großartig – ein Lesmeister Special",
+            "2️⃣ Weber am Werk – ein Meisterwerk der Porzellankunst",
+            "3️⃣ Ein Hecktor, ein Kunsterwerk das die Welt erschüttert – oder zumindest das Badezimmer"
         ]
     )
     kommentar = st.text_area("Letzte Worte zu deinem Werk (optional)")
