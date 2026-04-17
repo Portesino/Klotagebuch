@@ -75,7 +75,7 @@ st.info(random.choice(klo_weisheiten))
 # qr = qrcode.make(url)
 # buf = BytesIO()
 # qr.save(buf, format="PNG")
-# st.image(buf.getvalue(), caption="Scanne mich, du edler Porzellanthron-Besucher")
+# st.image(buf.getvalue(), caption="Scanne mich, Happy Birthday to you! 🎉")
 
 # -----------------------------
 # Formular für Eintrag
@@ -83,9 +83,48 @@ st.info(random.choice(klo_weisheiten))
 st.subheader("✍️ Dein majestätischer Eintrag")
 
 st.write("Bitte beschreibe dein Werk. Sei ehrlich. Sei stolz.")
+st.subheader("Wer sitzt gerade auf dem Thron?")
+
+# Session-State initialisieren
+if "name" not in st.session_state:
+    st.session_state.name = None
+if "new_user_mode" not in st.session_state:
+    st.session_state.new_user_mode = False
+
+col1, col2, col3 = st.columns(3)
+
+# Buttons
+with col1:
+    if st.button("Pascal"):
+        st.session_state.name = "Pascal"
+        st.session_state.new_user_mode = False
+
+with col2:
+    if st.button("Marlene"):
+        st.session_state.name = "Marlene"
+        st.session_state.new_user_mode = False
+
+with col3:
+    if st.button("Gast"):
+        st.session_state.new_user_mode = True
+        st.session_state.name = ""   # leer, damit Textfeld erscheint
+
+# Wenn neuer Nutzer gewählt wurde → Textfeld anzeigen
+if st.session_state.new_user_mode:
+    st.session_state.name = st.text_input("Bitte gib deinen Namen ein:", st.session_state.name)
+
+# Anzeige
+if not st.session_state.name:
+    st.info("Bitte wähle einen Namen aus.")
+else:
+    st.success(f"Ausgewählt: {st.session_state.name}")
 
 with st.form("eintrag_form"):
-    name = st.text_input("Wer sitzt da auf dem Thron?", "")
+    
+    name = st.session_state.name
+    st.subheader("Wer sitzt gerade auf dem Thron?")
+
+
     art = st.selectbox(
         "Wie würdest du dein Werk bewerten?",
         [
@@ -94,7 +133,7 @@ with st.form("eintrag_form"):
             "💩 Solide Nummer",
             "🚀 Start einer Rakete",
             "🌋 Vulkanische Aktivität",
-            "🥚 Glücks-Ei", 
+            "🥚 Glücks-Ei",
             "🧻 Ich brauche Unterstützung",
             "🤫 Geheimmission – der Geniesser!",
             "👑 Ein königliches Meisterwerk",
